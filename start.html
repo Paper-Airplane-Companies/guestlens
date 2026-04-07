@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>GuestLens Now | Start an Event Instantly</title>
+  <meta
+    name="description"
+    content="Launch GuestLens Now in minutes. Create your event, simulate payment, and share your live event link instantly."
+  />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700;800&family=Open+Sans:wght@400;500;600;700&display=swap"
+    rel="stylesheet"
+  />
+  <link rel="stylesheet" href="assets/style.css" />
+</head>
+<body data-page="start-now">
+  <div class="site-wrap">
+    <header class="site-header">
+      <div class="container nav-shell">
+        <a href="index.html" class="logo">GuestLens</a>
+        <nav class="main-nav" aria-label="Primary Navigation">
+          <a href="index.html#experience">Experience</a>
+          <a href="index.html#pricing">Pricing</a>
+          <a href="contact.html">Book Custom</a>
+          <a href="start.html" class="nav-cta">GuestLens Now</a>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <section class="hero hero-compact">
+        <div class="container">
+          <p class="eyebrow">GuestLens Now</p>
+          <h1>Start your event instantly.</h1>
+          <p class="hero-subtext">
+            One QR code, one page, one experience. Build your event link in minutes and text it to guests tonight.
+          </p>
+        </div>
+      </section>
+
+      <section class="contact-section">
+        <div class="container start-now-grid">
+          <article class="contact-panel contact-form-panel">
+            <p class="section-kicker">Host Setup</p>
+            <h2>Create your event.</h2>
+
+            <form id="start-now-form" class="contact-form" action="#" method="post">
+              <div class="form-row">
+                <label for="event-name">Event Name</label>
+                <input type="text" id="event-name" name="event-name" placeholder="Kennedy & Cooper’s Graduation" required />
+              </div>
+
+              <div class="form-row">
+                <label for="host-name">Host Name</label>
+                <input type="text" id="host-name" name="host-name" placeholder="Your name" required />
+              </div>
+
+              <div class="form-row">
+                <label for="event-type">Event Type</label>
+                <select id="event-type" name="event-type" required>
+                  <option value="">Select event type</option>
+                  <option>Wedding</option>
+                  <option>Birthday Party</option>
+                  <option>Graduation</option>
+                  <option>Corporate Event</option>
+                  <option>Celebration</option>
+                  <option>Other</option>
+                </select>
+              </div>
+
+              <div class="form-row">
+                <label for="prompt-pack">Prompt Pack (optional)</label>
+                <select id="prompt-pack" name="prompt-pack">
+                  <option value="">Default mixed moments</option>
+                  <option value="party">Party Energy</option>
+                  <option value="sentimental">Memory & Advice</option>
+                  <option value="networking">Mingle & Networking</option>
+                </select>
+              </div>
+
+              <div class="form-row">
+                <label for="welcome-message">Welcome Message (optional)</label>
+                <textarea
+                  id="welcome-message"
+                  name="welcome-message"
+                  rows="4"
+                  placeholder="Welcome! Upload your photos and complete tonight’s challenge."
+                ></textarea>
+              </div>
+
+              <button type="submit" class="btn btn-primary btn-full">Simulate Payment & Create Event</button>
+            </form>
+
+            <p class="form-helper">Payment is mocked for MVP. No real card processing yet.</p>
+          </article>
+
+          <aside class="contact-panel contact-panel-dark">
+            <p class="section-kicker">Instant Plan</p>
+            <h2>GuestLens Now</h2>
+            <div class="now-price">$49.99</div>
+            <ul class="feature-list">
+              <li>Instant setup in minutes</li>
+              <li>Unlimited guest access</li>
+              <li>Live photo challenge + uploads</li>
+              <li>Shareable event link for texting guests</li>
+            </ul>
+          </aside>
+        </div>
+      </section>
+    </main>
+  </div>
+  <script src="assets/guestlens-now.js"></script>
+</body>
+</html>
