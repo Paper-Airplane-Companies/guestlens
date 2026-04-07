@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>GuestLens Event | Tonight’s Photo Challenge</title>
+  <meta
+    name="description"
+    content="Join tonight’s GuestLens event challenge. Upload moments, track progress, and unlock the full gallery."
+  />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700;800&family=Open+Sans:wght@400;500;600;700&display=swap"
+    rel="stylesheet"
+  />
+  <link rel="stylesheet" href="../assets/style.css" />
+</head>
+<body data-page="instant-event">
+  <div class="site-wrap">
+    <main class="event-page">
+      <section class="event-hero">
+        <div class="container event-shell">
+          <div class="event-topline">GuestLens Now</div>
+          <h1 id="event-title">Tonight’s Event</h1>
+          <p class="event-subtext" id="event-subtext">
+            Capture moments, follow tonight’s photo challenge, and help build the shared album.
+          </p>
+          <div class="event-actions">
+            <a href="#challenge" class="btn btn-primary">Start Challenge</a>
+            <button id="quick-upload-btn" class="btn btn-secondary" type="button">Quick Upload</button>
+            <input id="quick-upload-input" type="file" accept="image/*" hidden />
+          </div>
+        </div>
+      </section>
+
+      <section id="host-share-section" class="event-highlight host-share hidden">
+        <div class="container">
+          <div class="event-highlight-box">
+            <p class="section-kicker">Host Success</p>
+            <h2>Your event is live.</h2>
+            <p>Share this link with guests:</p>
+            <p id="host-link" class="host-link"></p>
+            <div class="event-actions">
+              <button id="copy-link-btn" type="button" class="btn btn-secondary">Copy Link</button>
+              <button id="text-guests-btn" type="button" class="btn btn-primary">Text Guests</button>
+            </div>
+            <p class="form-helper" id="share-message-preview"></p>
+          </div>
+        </div>
+      </section>
+
+      <section id="challenge" class="event-instructions">
+        <div class="container event-grid">
+          <div class="event-card">
+            <p class="section-kicker">Tonight’s Photo Challenge</p>
+            <h2>Capture these moments.</h2>
+            <p id="challenge-progress" class="event-progress">0 of 8 completed</p>
+
+            <div id="challenge-list" class="event-hunt-list"></div>
+          </div>
+
+          <div class="event-card">
+            <p class="section-kicker">Selected Prompt</p>
+            <h2 id="selected-title">Choose a challenge item</h2>
+            <p id="selected-prompt" class="event-subtext">
+              Tap any challenge item to see a prompt and upload a photo for that moment.
+            </p>
+            <div class="event-actions">
+              <button id="prompt-upload-btn" class="btn btn-primary" type="button">Upload for this moment</button>
+              <input id="prompt-upload-input" type="file" accept="image/*" hidden />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="unlock-section" class="event-highlight hidden">
+        <div class="container">
+          <div class="event-highlight-box">
+            <p class="section-kicker">Unlock Full Gallery</p>
+            <h2>You’ve captured <span id="unlock-progress">3</span> moments. See what everyone else captured.</h2>
+            <div class="blurred-gallery-preview">
+              <div></div><div></div><div></div>
+            </div>
+            <div class="unlock-shell">
+              <div class="form-row">
+                <label for="unlock-email">Create account (email)</label>
+                <input id="unlock-email" type="email" placeholder="you@example.com" />
+              </div>
+              <button id="unlock-btn" class="btn btn-primary btn-full" type="button">Unlock the full night for $0.99</button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="gallery-section" class="event-footer-cta hidden">
+        <div class="container event-footer-shell">
+          <h2>Full Gallery Unlocked</h2>
+          <p>
+            Download your favorite moments anytime. Photos available for 30 days. Download before they expire.
+          </p>
+          <div id="gallery-grid" class="gallery-grid"></div>
+        </div>
+      </section>
+    </main>
+  </div>
+  <script src="../assets/guestlens-now.js"></script>
+</body>
+</html>
