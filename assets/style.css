@@ -223,8 +223,62 @@ a {
 }
 
 .now-cta-inline p {
-  margin: 0 0 14px;
+  margin: 0;
   color: var(--text-soft);
+}
+
+.now-cta-featured {
+  margin-top: 24px;
+  padding: 22px;
+  border-color: rgba(58, 134, 255, 0.45);
+  background:
+    radial-gradient(circle at top right, rgba(58, 134, 255, 0.18), transparent 52%),
+    rgba(255, 255, 255, 0.03);
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.35);
+}
+
+.now-cta-badge {
+  display: inline-flex;
+  align-items: center;
+  min-height: 26px;
+  padding: 0 10px;
+  border-radius: 999px;
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  font-weight: 700;
+  color: var(--accent);
+  background: var(--accent-soft);
+}
+
+.now-cta-featured h3 {
+  margin: 12px 0 0;
+  font-family: "Montserrat", sans-serif;
+  font-size: clamp(1.35rem, 2.6vw, 1.75rem);
+  line-height: 1.08;
+  letter-spacing: -0.02em;
+}
+
+.now-cta-main {
+  margin-top: 12px !important;
+  font-size: 1rem;
+  color: var(--text) !important;
+}
+
+.now-cta-support {
+  margin-top: 10px !important;
+  font-size: 0.95rem;
+}
+
+.now-cta-featured .btn {
+  margin-top: 16px;
+  min-height: 56px;
+}
+
+.now-cta-footnote {
+  margin-top: 10px !important;
+  font-size: 0.86rem;
+  opacity: 0.88;
 }
 
 .proof-item {
@@ -938,6 +992,14 @@ a {
     padding: 54px 0 48px;
   }
 
+  .now-cta-featured {
+    padding: 20px;
+  }
+
+  .now-cta-featured .btn {
+    width: 100%;
+  }
+
   .problem-solution,
   .how-it-works,
   .experience-section,
@@ -996,6 +1058,10 @@ a {
   .section-heading p,
   .cta-shell p {
     font-size: 0.98rem;
+  }
+
+  .now-cta-featured h3 {
+    font-size: 1.35rem;
   }
 
   .hero-proof {
