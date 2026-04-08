@@ -1,7 +1,7 @@
 import { createClient } from "https://cdn.jsdelivr.net/npm/@supabase/supabase-js/+esm";
 
-const SUPABASE_URL = "PASTE_YOUR_URL";
-const SUPABASE_ANON_KEY = "PASTE_YOUR_ANON_KEY";
+const SUPABASE_URL = "https://csqjqsvmkzuiijkruefc.supabase.co";
+const SUPABASE_ANON_KEY = "sb_publishable_qODf0-nrWhUCgUXk08lLRw_54WvjTnj";
 
 const supabase = createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
 
@@ -48,27 +48,29 @@ function populateEvent(event) {
   const previewEl = document.getElementById("share-message-preview");
   const hostSection = document.getElementById("host-share-section");
 
-  // Set title
-  if (titleEl) titleEl.textContent = event.event_name;
+  if (titleEl) {
+    titleEl.textContent = event.event_name || "Tonight’s Event";
+  }
 
-  // Build share link (THIS is the fix for wrong link)
-  const shareLink = `${window.location.origin}/guestlens/events/instant-event.html?slug=${event.slug}`;
+  const shareLink = `${window.location.origin}/guestlens/events/instant-event.html?slug=${encodeURIComponent(event.slug)}`;
 
-  if (linkEl) linkEl.textContent = shareLink;
+  if (linkEl) {
+    linkEl.textContent = shareLink;
+  }
 
-  // Show host UI
   const isHost = getParam("host") === "1";
   if (isHost && hostSection) {
     hostSection.classList.remove("hidden");
   }
 
-  // SMS preview
   const message = `We’re using GuestLens to capture tonight 📸
 
 Upload your pics + follow the challenge:
 ${shareLink}`;
 
-  if (previewEl) previewEl.textContent = message;
+  if (previewEl) {
+    previewEl.textContent = message;
+  }
 
   setupButtons(shareLink, message);
 }
@@ -81,12 +83,17 @@ function setupButtons(link, message) {
   const textBtn = document.getElementById("text-guests-btn");
 
   if (copyBtn) {
-    copyBtn.addEventListener("click", () => {
-      navigator.clipboard.writeText(link);
-      copyBtn.textContent = "Copied!";
-      setTimeout(() => {
-        copyBtn.textContent = "Copy Link";
-      }, 2000);
+    copyBtn.addEventListener("click", async () => {
+      try {
+        await navigator.clipboard.writeText(link);
+        copyBtn.textContent = "Copied!";
+        setTimeout(() => {
+          copyBtn.textContent = "Copy Link";
+        }, 2000);
+      } catch (error) {
+        console.error("Clipboard error:", error);
+        alert("Could not copy link.");
+      }
     });
   }
 
