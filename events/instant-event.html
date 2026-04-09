@@ -62,6 +62,11 @@
             <h2>Capture these moments.</h2>
             <p id="challenge-progress" class="event-progress">0 of 8 completed</p>
 
+            <div class="form-row" id="guest-name-row">
+              <label for="guest-name">Your name</label>
+              <input id="guest-name" type="text" placeholder="Enter your name before uploading" />
+            </div>
+
             <div id="challenge-list" class="event-hunt-list"></div>
           </div>
 
@@ -75,6 +80,18 @@
               <button id="prompt-upload-btn" class="btn btn-primary" type="button">Upload for this moment</button>
               <input id="prompt-upload-input" type="file" accept="image/*" hidden />
             </div>
+            <p class="form-helper">Photos are available for 14 days. You’ll get a reminder before they expire.</p>
+          </div>
+        </div>
+      </section>
+
+      <section id="leaderboard-section" class="event-highlight hidden">
+        <div class="container">
+          <div class="event-highlight-box">
+            <p class="section-kicker">Host Leaderboard</p>
+            <h2>Top Guest Contributors</h2>
+            <p id="leaderboard-summary">Track who captured the most moments tonight.</p>
+            <div id="leaderboard-list" class="event-hunt-list"></div>
           </div>
         </div>
       </section>
@@ -100,15 +117,15 @@
 
       <section id="gallery-section" class="event-footer-cta hidden">
         <div class="container event-footer-shell">
-          <h2>Full Gallery Unlocked</h2>
-          <p>
-            Download your favorite moments anytime. Photos available for 14 days. Download before they expire.
+          <h2 id="gallery-title">Event Gallery</h2>
+          <p id="gallery-subtext">
+            Download your favorite moments anytime. Photos are available for 14 days. Download before they expire.
           </p>
           <div id="gallery-grid" class="gallery-grid"></div>
         </div>
       </section>
     </main>
   </div>
-  <script src="../assets/guestlens-now.js"></script>
+  <script type="module" src="../assets/guestlens-now.js"></script>
 </body>
 </html>
